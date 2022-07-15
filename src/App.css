@@ -1,4 +1,120 @@
 .App {
   text-align: center;
 }
+.header{
+  text-align: center;
+  margin-top: 2%;
+  color: purple;
+}
+.header-img{
+  margin-left: calc(40%);
+}
+.primary-text{
+  color: purple;
+  font-size: 13px;
+}
 
+.primary-btn,
+.primary-btn:focus {
+  background: purple;
+  color: white;
+  border: none;
+  box-shadow: 2px 2px 4px rgb(136, 132, 132);
+  border-radius: 15px;
+  padding: 5px;
+  width: 300px;
+}
+.small-primary-btn,
+.small-primary-btn:focus{
+  background: purple;
+    color: white;
+    border: none;
+    box-shadow: 2px 2px 4px rgb(136, 132, 132);
+    border-radius: 15px;
+    font-size: 12px;
+    padding: 5px;
+  width: 100px;
+}
+.small-primary-btn:hover{
+  transform: scale(1.1);
+    color: white;
+    border: none;
+}
+.primary-btn:hover {
+  /* transition: all 0.3s ease-in-out; */
+  transform: scale(1.1);
+  color: white;
+  border: none;
+}
+#login-user{
+  width: 300px;
+  color: purple;
+  border: none;
+  border-radius: 20px;
+  background-color: rgb(241, 233, 233);
+
+}
+.login-user-item{
+  width: 300px;
+  color: purple;
+    border: none;
+    border-radius: 20px;
+}
+
+
+.nav-item{
+  color: purple;
+}
+.nav-bar{
+  background-color: rgb(241, 233, 233);
+}
+.nav-item:hover{
+  color: rgb(173, 114, 173);
+}
+.input-choice{
+width: 80%;
+height: 40px;
+padding: 10px;
+border-radius: 10px;
+border: none;
+  box-shadow: 1px 1px 4px rgb(136, 132, 132);
+
+}
+.users-table{
+width: 70%;
+}
+.user-logo{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.user-img{
+  width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.card {
+  box-shadow: 1px 1px 4px gray;
+  background-color: rgb(250, 242, 242);
+}
+.text-xs{
+  font-size: 10px;
+}
+
+.nav-item{
+  text-decoration: none;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: medium;
+}
+.nav-item-btn, .nav-item-btn:hover{
+  background-color: purple;
+  color: rgb(241, 233, 233);
+  border: 1px solid purple;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: medium;
+  border-radius: 100px;
+  height: 30px;
+  margin-top: 15px;
+  align-items: center;
+  padding-top: 2px;
+}
