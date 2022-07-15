@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import { connect } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { handleQuestionVote } from "../actions/Questions";
 
 function Poll(props) {
+  const navigate = useNavigate();
   const p_id = useParams().id;
   const question = props.Questions[p_id];
+
+  if (!props.AuthUser || !question) {
+    navigate("/errorpage");
+  }
   const votes = [...question.optionOne.votes, ...question.optionTwo.votes];
   const answered = votes.includes(props.AuthUser);
 

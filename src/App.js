@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar";
 import LeaderBoard from "./components/LeaderBoard";
 import NewPoll from "./components/NewPoll";
 import Poll from "./components/Poll";
+import ErrorPage from "./components/ErrorPage";
 
 function App(props) {
   useEffect(() => {
@@ -27,6 +28,7 @@ function App(props) {
             <Route path="/leaderboard" element={<LeaderBoard />} />
             <Route path="/add" element={<NewPoll />} />
             <Route path="/" element={<Dashboard />} />
+            <Route path="/error" element={<ErrorPage />} />
           </Routes>
         </>
       )}

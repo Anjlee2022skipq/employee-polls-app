@@ -9,9 +9,11 @@ function NewPoll(props) {
   const [optionTwo, setOptionTwo] = useState("");
 
   const handleSubmit = () => {
-    const { dispatch } = props;
-    dispatch(handleSaveQuestion(optionOne, optionTwo));
-    navigate("/");
+    if (optionOne !== "" && optionTwo !== "") {
+      const { dispatch } = props;
+      dispatch(handleSaveQuestion(optionOne, optionTwo));
+      navigate("/");
+    }
   };
 
   return (
@@ -41,7 +43,11 @@ function NewPoll(props) {
           value={optionTwo}
           onChange={(e) => setOptionTwo(e.target.value)}
         />
-        <button className="primary-btn m-5 p-2" onClick={handleSubmit}>
+        <button
+          className="primary-btn m-5 p-2"
+          onClick={handleSubmit}
+          disabled={optionOne === "" && optionTwo === ""}
+        >
           Submit
         </button>
       </div>

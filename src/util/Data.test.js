@@ -1,8 +1,6 @@
 import { _saveQuestionAnswer, _saveQuestion } from "./Data";
 
 describe("_saveQuestion", () => {
-  _saveQuestion;
-
   it("should return error for incorrect data passed", async () => {
     const response = await _saveQuestion({
       author: "sarahedo",
@@ -27,7 +25,6 @@ describe("_saveQuestion", () => {
 });
 
 describe("_saveQuestionAnswer", () => {
-  _saveQuestionAnswer;
   it("should return true for correct parameters", async () => {
     const response = await _saveQuestionAnswer({
       authedUser: "sarahedo",
