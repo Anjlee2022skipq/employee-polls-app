@@ -1,4 +1,4 @@
-import react, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { connect } from "react-redux";
 import { handleInitalData } from "./actions/Shared";
 import "./App.css";
@@ -14,7 +14,7 @@ import ErrorPage from "./components/ErrorPage";
 function App(props) {
   useEffect(() => {
     props.dispatch(handleInitalData());
-  }, []);
+  });
   return (
     <>
       {props.loggedIn === !true ? (
@@ -24,11 +24,11 @@ function App(props) {
           <Navbar />
           <Routes>
             <Route path="/login" element={<Login />} />
-            <Route path="/poll/:id" element={<Poll />} />
+            <Route path="/questions/:id" element={<Poll />} />
             <Route path="/leaderboard" element={<LeaderBoard />} />
             <Route path="/add" element={<NewPoll />} />
             <Route path="/" element={<Dashboard />} />
-            <Route path="/error" element={<ErrorPage />} />
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
         </>
       )}
@@ -37,7 +37,7 @@ function App(props) {
 }
 function mapStateToProps({ AuthUser }) {
   const loggedIn = AuthUser === null ? false : true;
-  console.log(loggedIn);
+
   return {
     loggedIn,
   };

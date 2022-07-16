@@ -118,3 +118,9 @@ width: 70%;
   align-items: center;
   padding-top: 2px;
 }
+
+.error-txt{
+  color: red;
+  font-size: 13px;
+  font-style: italic;
+}

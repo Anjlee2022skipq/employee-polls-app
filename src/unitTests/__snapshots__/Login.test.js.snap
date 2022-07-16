@@ -17,6 +17,7 @@ Object {
         class="header-img"
       >
         <img
+          alt="img"
           src="/assets/login.jfif"
         />
       </div>
@@ -28,6 +29,7 @@ Object {
         >
           <div
             class="dropdown"
+            data-testid="dropdown-user"
           >
             <button
               aria-expanded="false"
@@ -65,6 +67,7 @@ Object {
       class="header-img"
     >
       <img
+        alt="img"
         src="/assets/login.jfif"
       />
     </div>
@@ -76,6 +79,7 @@ Object {
       >
         <div
           class="dropdown"
+          data-testid="dropdown-user"
         >
           <button
             aria-expanded="false"

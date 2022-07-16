@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import { connect } from "react-redux";
@@ -16,7 +16,11 @@ function Login(props) {
     e.preventDefault();
     const { dispatch } = props;
     dispatch(handleLoginUser(userName));
-    navigate("/");
+    const path = window.location.pathname;
+
+    if (path === "/login") return navigate("/");
+
+    navigate(path);
   };
 
   return (
@@ -26,13 +30,14 @@ function Login(props) {
         <hr />
       </div>
       <div className="header-img">
-        <img src="/assets/login.jfif" />
+        <img src="/assets/login.jfif" alt="img" />
       </div>
       <div className="login-section d-flex m-2 p-2 flex-column">
         <div className="d-flex p-2 justify-content-center">
           <DropdownButton
             id="login-user"
             title={userName === null ? "Select User" : userName}
+            data-testid="dropdown-user"
           >
             {props.userIds.map((user) => (
               <Dropdown.Item
@@ -60,10 +65,11 @@ function Login(props) {
     </>
   );
 }
-const mapStateToProps = ({ Users }) => {
+const mapStateToProps = ({ Users, AuthUser }) => {
   const userIds = Object.keys(Users);
   return {
     userIds,
+    authenticated: !(AuthUser === null),
   };
 };
 export default connect(mapStateToProps)(Login);

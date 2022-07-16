@@ -1,7 +1,7 @@
-import { _saveQuestionAnswer, _saveQuestion } from "./Data";
+import { _saveQuestionAnswer, _saveQuestion } from "../util/Data";
 
 describe("_saveQuestion", () => {
-  it("should return error for incorrect data passed", async () => {
+  it("return error when incorrect data passed", async () => {
     const response = await _saveQuestion({
       author: "sarahedo",
       optionOneText: "have coffee",
@@ -13,7 +13,7 @@ describe("_saveQuestion", () => {
     );
   });
 
-  it("should return question correct data passed", async () => {
+  it("return question data when correct data passed", async () => {
     const response = await _saveQuestion({
       author: "sarahedo",
       optionOneText: "have coffee",
@@ -25,7 +25,7 @@ describe("_saveQuestion", () => {
 });
 
 describe("_saveQuestionAnswer", () => {
-  it("should return true for correct parameters", async () => {
+  it("return true when correct data passed", async () => {
     const response = await _saveQuestionAnswer({
       authedUser: "sarahedo",
       qid: "8xf0y6ziyjabvozdd253nd",
@@ -35,7 +35,7 @@ describe("_saveQuestionAnswer", () => {
     expect(response).toBe(true);
   });
 
-  it("should return error for false parameters", async () => {
+  it("return error message when incorrect data passed", async () => {
     const response = await _saveQuestionAnswer({
       authedUser: "sarahedo",
       qid: undefined,

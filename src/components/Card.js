@@ -6,7 +6,7 @@ function Card(props) {
   const navigate = useNavigate();
 
   const handlePoll = () => {
-    navigate(`/poll/${props.pollId}`);
+    navigate(`/questions/${props.pollId}`);
   };
   return (
     <div className="col-md-3 p-2 m-3 card rounded d-flex">
@@ -37,7 +37,7 @@ function Card(props) {
     </div>
   );
 }
-const mapStateToProps = ({ AuthUser, Users, Questions }, { pollId }) => {
+const mapStateToProps = ({ Users, Questions }, { pollId }) => {
   const poll = Questions[pollId];
   const author = poll.author;
   const timestamp = poll.timestamp;

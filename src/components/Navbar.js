@@ -28,8 +28,11 @@ function Navbar(props) {
           New Poll
         </Link>
       </div>
-
-      <img src={userAvatar} className="user-logo m-1" />
+      <img
+        src={require(`./../util/${userAvatar}`)}
+        className="user-logo m-1"
+        alt="userImg"
+      />
       <p className="nav-item text-muted p-2 m-2">{AuthUser}</p>
       <Button className="nav-item-btn text-center me-5" onClick={handleLogout}>
         Logout

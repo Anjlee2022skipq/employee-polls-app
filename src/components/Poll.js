@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import Form from "react-bootstrap/Form";
 import { connect } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import { handleQuestionVote } from "../actions/Questions";
 
 function Poll(props) {
-  const navigate = useNavigate();
   const p_id = useParams().id;
   const question = props.Questions[p_id];
 
-  if (!props.AuthUser || !question) {
-    navigate("/errorpage");
+  if (question === undefined) {
+    return <Navigate to="/404"></Navigate>;
   }
   const votes = [...question.optionOne.votes, ...question.optionTwo.votes];
   const answered = votes.includes(props.AuthUser);
@@ -26,13 +25,13 @@ function Poll(props) {
 
   return (
     <>
-      {question && (
+      {question !== undefined ? (
         <div className="d-flex flex-column align-items-center m-3">
           <h5 className="m-2">Poll by {question.author}</h5>
-
           <img
             className="user-img m-3"
             src={require(`./../util/${props.Users[question.author].avatarURL}`)}
+            alt="authorImg"
           />
           <h5 className="m-2">Would You Rather</h5>
           <div className="d-flex card w-75 flex-column m-3  px-2 ">
@@ -88,6 +87,8 @@ function Poll(props) {
             )}
           </div>
         </div>
+      ) : (
+        <></>
       )}
     </>
   );

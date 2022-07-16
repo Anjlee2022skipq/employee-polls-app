@@ -30,6 +30,7 @@ function NewPoll(props) {
         </div>
         <input
           className="input-choice"
+          name="optionOne"
           placeholder="Enter first choice"
           value={optionOne}
           onChange={(e) => setOptionOne(e.target.value)}
@@ -38,6 +39,7 @@ function NewPoll(props) {
           <small>Option Two</small>
         </div>
         <input
+          name="optionTwo"
           className="input-choice"
           placeholder="Enter second choice"
           value={optionTwo}
