@@ -6,7 +6,11 @@ function UserDetail(props) {
     <>
       <div className="d-flex flex-row">
         <div>
-          <img src={props.avatarURL} className="user-logo m-1" />
+          <img
+            src={props.avatarURL}
+            className="user-logo m-1"
+            alt="user-logo"
+          />
         </div>
         <div>
           <div className="d-flex flex-column">
